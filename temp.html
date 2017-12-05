@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ADD Movies</title>
+	
+	<script type="text/javascript">
+		function AddNow()
+		{
+			id=document.getElementById("ide").value;
+			name=document.getElementById("name").value;
+			year=document.getElementById("year").value;
+			xhr=new XMLHttpRequest();
+			xhr.onreadystatechange=Suc;
+			xhr.open("GET","AddMovies.php?method=POST&movieID="+id+"&name="+name+"&year="+year,true);
+			xhr.send();
+				}
+		function Suc()
+		{
+
+			if(xhr.readyState==4 && xhr.status==200)
+			{
+				alert(xhr.responseText);
+			}
+		}
+	</script>
+	<style>
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=button]:hover {
+    background-color: #45a049;
+}
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+div {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+body {
+    background-color: yellow;
+}
+p {
+    background-color: rgb(255,0,255);
+}
+</style>
+</head>
+<body>
+
+<div>
+
+<form>
+ <p><label for="name">Movie Name</label></p>
+<input id="name" type="text" value=" ">
+ <p><label for="Year">Year released</label></p>
+<input id="year" type="text" value=" ">
+ <p><label for="ID">ID</label></p>
+<input id="ide" type="text" value=" ">
+<input type="button" id="clicked" class="button" onclick="AddNow()" value="submit">
+</form>
+
+</div>
+</body>
+</html>

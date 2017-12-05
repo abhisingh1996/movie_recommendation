@@ -1,0 +1,29 @@
+#container
+{
+	border:solid 2px red;
+}
+
+.found
+{
+	font-style:normal;
+	background-color: white;
+}
+
+.notfound
+{
+	font-style:italic;
+	background-color: ivory;
+}
+
+.suggest
+{
+	color: red;
+	background-color:yellow;
+}
+
+.suggest:hover
+{
+	color: yellow;
+	background-color:red;
+	cursor: pointer;
+}

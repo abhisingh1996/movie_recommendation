@@ -1,0 +1,66 @@
+
+
+#mainHeading{
+	text-align: left;
+}
+
+#mainHeadingText{
+	font-size: 60px;
+	color: #8E888A;
+}
+
+.mainButton{
+	width:400px;
+	margin-bottom:300px;
+	margin-left:100px;
+	font-size:40px;
+	color:white;
+	background-color:black;
+	background-image: url("images/7.jpg");
+	
+
+}
+#container
+{
+	border:solid 2px red;
+}
+
+.found
+{
+	font-style:normal;
+	background-color: white;
+}
+
+.notfound
+{
+	font-style:italic;
+	background-color: ivory;
+}
+
+.suggest
+{
+	color: red;
+	background-color:yellow;
+}
+
+.suggest:hover
+{
+	color: yellow;
+	background-color:red;
+	cursor: pointer;
+}
+.input
+{
+    border: 0px solid #444444;
+    height:39px;
+    width:346px;
+    background: url("images/7.jpg"); 
+     
+    padding-left:4px; 
+    font-size:20px;
+    }
+
+.design
+{
+	border:solid 2px red;
+}

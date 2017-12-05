@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Chat application</title>
+		<link rel="stylesheet" type="text/css" href="chat.css"/>
+		<script type="text/javascript">
+			function init() 
+			{ 
+				obj = new Chat(); 
+				obj.msg = document.getElementById("msg"); 
+				obj.chk = document.getElementById("chk"); 
+				obj.divinnertop = document.getElementById("innertop"); 
+				 
+				 
+				obj.snd = document.getElementById("snd"); 
+				obj.snd.addEventListener("click", obj.sendMsg, true); 
+				 
+				//Get the textbox and register the onkeyup to check for Enter key 
+				obj.msg.onkeyup = obj.checkEnter; 
+				 
+				//Start listening for messages 
+				obj.listenMsg(); 
+			} 
+			 
+			function Chat() 
+			{ 
+				this.xhr = new XMLHttpRequest(); 
+				 
+				//Called when the "SEND" button is clicked. 
+				this.sendMsg = function() 
+				{ 
+					newdiv = document.createElement("div"); 
+					newdiv.innerHTML = "<span>Me: </span>" + obj.msg.value; 
+					obj.divinnertop.appendChild(newdiv);
+					obj.sendRequest();
+					obj.msg.value = "";
+				} 
+				 
+				//Assuming this fires immediately after the log in. 
+				this.listenMsg = function() 
+				{ 
+					//Create the EventSource 
+					ev = new EventSource("chatmsg2.php"); 
+					ev.addEventListener("newmsg", obj.showMessage, true); 
+				} 
+				 
+				this.showMessage = function(event) 
+				{ 
+					console.log('showMessage'); 
+					newdiv = document.createElement("div");
+					newdiv.innerHTML = "<span>Friend: </span>" + event.data;
+					obj.divinnertop.appendChild(newdiv);
+				}
+				
+				this.sendRequest = function(){
+					xhr = new XMLHttpRequest();
+					xhr.open("GET","http://localhost/WT/1PI14CS012/Lab6/chat2.php?message=" + obj.msg.value, true);
+					xhr.send();
+				}
+				 
+				//Fires when there is a keyup in the text box 
+				this.checkEnter = function(event) 
+				{ 
+					if(event.keyCode == 13) 
+					{ 
+						//Check if the checkbox was checked 
+						if(obj.chk.checked) 
+						{ 
+							obj.sendMsg(); 
+						} 
+						else 
+						{ 
+							//Nothing to do 
+						} 
+					} 
+				} 
+			}
+		</script>
+		<link rel="stylesheet" href="bootstrap.min.css" type="text/css"/>
+		<style type="text/css">
+			.messages {
+				height: 200px;
+			}
+			.ta {
+				width:100%;
+			}
+		</style>
+	</head>
+	<body onload="init()">
+		<div class="container">
+			<div class="page-header">
+				<h1>Chat Application using SSE - Friend</h1>
+			</div>
+			<div class="row">
+				<div class="col-sm-3"></div>
+				<div class="col-sm-6">
+					<div class="row">
+						<div class="col-sm-12 messages" id="innertop">
+							
+						</div>
+					</div>
+					<div class="row form-group">
+						<input style="margin-top:10px" type="text" class="form-control" placeholder="Enter your message here" id="msg"/>
+						<div class="row" id="innerbot">
+							<div class="col-sm-6">
+								<div class="checkbox">
+								  <label><input type="checkbox" id="chk">Send on Enter</label>
+								</div>
+							</div>
+							<div class="col-sm-6 text-right">
+								<button class="btn btn-primary"  style="margin:10px" id="snd" >Send</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-3"></div>
+			</div>
+		</div>
+		</div>
+	</body>
+</html>

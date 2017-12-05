@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://localhost/movie_recommendation/Code\bootstrap-3.3.7/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="index.css">
+  <script src="http://localhost/movie_recommendation/Code/bootstrap-3.3.7/dist/js/jquery-3.1.1.min.js"></script>
+  <script src="http://localhost/movie_recommendation/Code/bootstrap-3.3.7/dist/js/bootstrap.js"></script>
+  
+ <script type="text/javascript" >
+ 
+ function init()
+		{
+			setTimeout(header,2000);
+			setTimeout(one,3000);
+			//links = document.getElementById("links");
+			//setTimeout(loadLinks, 1000);
+		}
+		function one()
+		{
+		
+			section1=document.getElementById("section1");
+			section1.style.display="block";
+				setTimeout(two,3000);
+		}
+		
+		function two()
+		{
+		
+			section2=document.getElementById("section2");
+			section2.style.display="block";
+			setTimeout(three,3000);
+		}
+		function three()
+		{
+		
+			section3=document.getElementById("section3");
+			section3.style.display="block";
+			setTimeout(four,3000);
+		}
+		
+		function four()
+		{
+		
+			section4=document.getElementById("section4");
+			section4.style.display="block";
+			setTimeout(five,3000);
+		}
+		
+		function five()
+		{
+		
+			section5=document.getElementById("section5");
+			section5.style.display="block";
+			setTimeout(six,3000);
+		}
+		function six()
+		{
+		
+			section6=document.getElementById("section6");
+			section6.style.display="block";
+			//setTimeout(three,3000);
+		}
+		
+		
+		
+		function header()
+		{
+		
+			abc=document.getElementById("abc");
+			abc.style.display="block";
+		
+		
+		}
+		function loadSearch()
+		{
+			document.getElementById("searchLoader").style.display = "none";
+			document.getElementById("searchContent").style.display = "block";
+		}
+		
+		
+		
+		
+		
+
+
+</script>
+
+<style>
+		th, td
+		{
+			border: 2px solid black;
+			border-collapse: collapse;
+		}
+	</style>
+</head>
+
+<body onload="init()" data-spy="scroll" data-target=".navbar" data-offset="50">
+	 
+	
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html"><span class="glyphicon glyphicon-film"></a>
+    </div>
+    <div id="abc" style="display:none">
+      <div class="collapse navbar-collapse" id="myNavbar" >
+        <ul class="nav navbar-nav">
+          <li><a href="#section1"  style="padding-left:60px;padding-right:60px;"">Inception</a></li>
+          <li><a href="#section2"  style="padding-left:60px;padding-right:60px;">Interstellar</a></li>
+          <li><a href="#section3" style="padding-left:60px;padding-right:60px;">Source code</a></li>
+          <li><a href="#section4" style="padding-left:60px;padding-right:60px;">Coherence</a></li>
+          <li><a href="#section5" style="padding-left:60px;padding-right:60px;">Matrix</a></li>
+          <li><a href="#section6" style="padding-left:60px;padding-right:60px;">Transcendence</a></li>
+        </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div id="section1" style="display:none">
+<img src="images/inception.jpg" style="width:1366px;height:700px;" >
+</div>
+
+<div id="section2" style="display:none">
+<img src="images/interstellar.jpg" style="width:1366px;height:700px;" >
+</div>
+
+<div id="section3" style="display:none">
+<img src="images/sourceCode.jpg" style="width:1366px;height:700px;" >
+</div>
+
+<div id="section4" style="display:none">
+<img src="images/coherence.jpg" style="width:1366px;height:700px;" >
+</div>
+
+<div id="section5" style="display:none">
+<img src="images/matrix.jpg" style="width:1366px;height:700px;" >
+</div>
+
+<div id="section6" style="display:none">
+<img src="images/transcendence.jpg" style="width:1366px;height:700px;" >
+</div>
+
+</div>
+</body>
+</html>

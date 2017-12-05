@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Periodic Refresh</title>
+<script type="text/javascript">
+obj=
+{
+	xhr: new XMLHttpRequest(),
+	div: null,
+	
+	refreshData: function()
+	{
+		obj.xhr.onreadystatechange = obj.showData;
+		
+		obj.xhr.open("GET", "http://localhost/T1/PR/getdata.php", true);
+		
+		obj.xhr.send();
+		
+		//periodic call 
+		setTimeout(obj.refreshData,5000);
+
+	},
+	
+	//Function to display data
+	showData: function()
+	{
+		if(this.readyState == 4 && this.status == 200)
+		{
+			obj.div = document.getElementById("out");
+			obj.div.innerHTML = this.responseText;
+		}
+	}
+}
+</script>
+</head>
+<body onload="obj.refreshData()">
+<div id="out">CONTENT TO COME HERE</div>
+</body>
+</html>

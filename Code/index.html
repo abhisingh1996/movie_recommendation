@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://localhost/movie_recommendation/Code/bootstrap-3.3.7/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="index.css">
+  <script src="http://localhost/movie_recommendation/Code/bootstrap-3.3.7/dist\js/jquery-3.1.1.min.js"></script>
+  <script src="http://localhost/movie_recommendation/Code/bootstrap-3.3.7/dist/js/bootstrap.js"></script>
+  <script type="text/javascript" src="suggest/suggest.js"></script>
+ <script>
+ function initi()
+ {
+			init();
+			setTimeout(header1, 2000);
+			setTimeout(header2,3000);
+			setTimeout(header3,4000);
+ 
+}
+ function header1()
+{
+	abc=document.getElementById("abc1");
+	abc.style.display="block";
+
+}
+
+function header2()
+{
+	abc2=document.getElementById("abc2");
+	abc2.style.display="block";
+
+}
+function header3()
+{
+	abc3=document.getElementById("abc3");
+	abc3.style.display="block";
+
+}
+ 
+ 
+ </script>
+</head>
+
+<body onload="initi()">
+
+  <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="1050">
+  
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+      <li data-target="#myCarousel" data-slide-to="3"></li>
+      <li data-target="#myCarousel" data-slide-to="4"></li>
+    </ol>
+	
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+		
+	<div id="abc3" style="display:none">	
+	<center>
+	<div>
+	</br></br>
+	<h2>SELECT YOUR MOVIE</h2>
+	<table border="0">
+	<tr>
+		<td>MOVIE:</td>
+		<td><input type="text" size="30" class="input" id="movie" onkeyup="obj.getMovies()"/></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td><div id="container"></div></td>
+	</tr>
+</table>
+	
+	
+	</div>
+	</center>
+	</div>
+        <img src="images/5.jpg" style="width:1366px;height:680px;">
+        <nav class="navbar navbar-inverse navbar-fixed-top" style="opacity:0.5">
+  		<div class="container-fluid">
+    	<div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html"><span class="glyphicon glyphicon-film"></a>
+    </div>
+    <div id="abc1" style="display:none">
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+		 <li class="active"><a href="Sci-Fi.html" style="padding-left:60px;padding-right:60px;color:white;">Category</a></li>
+          <li><a href="Sci-Fi.html" style="padding-left:60px;padding-right:60px;color:white;">Science Fiction</a></li>
+          <li><a href="horror.html" style="padding-left:60px;padding-right:60px;color:white;">Horror</a></li>
+          <li><a href="fantasy.html" style="padding-left:60px;padding-right:60px;color:white;">Fantasy</a></li>
+		  <li><a href="comet/review.html" style="padding-left:60px;padding-right:60px;color:white;">review</a></li>
+		   <li><a href="refresh/index.php" style="padding-left:60px;padding-right:60px;color:white;">movie update</a></li>
+		   <li><a href="../temp.html" style="padding-left:60px;padding-right:60px;color:white;">Add Movie</a></li>
+
+        </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+	
+	
+	
+	<div id="abc2"  style="display:none">
+        <div class="carousel-caption"></a><a href="http://localhost/movie_recommendation/recommend.html"><button class="mainButton">Recommendation</button></a></div>
+      
+       </div>
+	   </div>
+
+      <div class="item">
+        <img src="images/2.jpg" style="width:1366px;height:680px;">
+        
+      </div>
+    
+      <div class="item">
+        <img src="images/3.jpg" style="width:1366px;height:680px;" >
+        
+      </div>
+
+      <div class="item">
+        <img src="images/4.jpg" style="width:1366px;height:680px;">
+      </div>
+
+      <div class="item">
+      <img src="images/1.jpg" style="width:1366px;height:680px; margin-top: 0px;">
+      </div>
+
+    </div>
+
+    
+  </div>
+
+
+</body>
+</html>
+
+

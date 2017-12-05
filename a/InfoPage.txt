@@ -1,0 +1,15 @@
+username=abhishek,prodname=AppleMobile
+username=abhishek,prodname=Blackberry
+username=abhishek,prodname=Most+Posh+Flat+Racer
+username=abhijith,prodname=FlatCar
+username=abhijith,prodname=SecretPaper
+username=kavya,prodname=SuperFastCar
+username=kavya,prodname=SuperFastCar
+username=abhishek,prodname=Mobile20
+username=abhishek,prodname=Mobile20
+username=abhishek,prodname=Mobile20
+username=abhishek,prodname=Mobile
+username=abhishek,prodname=Mobile20
+username=abhishek,prodname=Mobile1
+username=abhishek,prodname=Mobile1
+username=abhishek,prodname=Samsung
